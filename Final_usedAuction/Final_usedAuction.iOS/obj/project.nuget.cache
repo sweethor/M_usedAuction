@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "Z1MGa0YSNp6GG7/93hhZwoRInLVUWobmzdiNMaZoXLO2xBdFn9zOluHeRNjZygVFWt2qbMfU/VsdmsbM4UaHmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\KTH\\source\\repos\\Final_usedAuction\\Final_usedAuction\\Final_usedAuction.iOS\\Final_usedAuction.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KTH\\.nuget\\packages\\firebasedatabase.net\\4.0.6\\firebasedatabase.net.4.0.6.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\system.runtime.interopservices.windowsruntime\\4.3.0\\system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\KTH\\.nuget\\packages\\xamarin.forms\\5.0.0.2125\\xamarin.forms.5.0.0.2125.nupkg.sha512"
+  ],
+  "logs": []
+}

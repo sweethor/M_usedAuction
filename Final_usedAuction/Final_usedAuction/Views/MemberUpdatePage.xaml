@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_usedAuction.Views.MemberUpdatePage"
+             xmlns:vm="clr-namespace:Final_usedAuction.ViewModels">
+   
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <Entry x:Name="SignUpPW" Placeholder="PW" Text="{Binding SignUpPW}"></Entry>
+            <Entry x:Name="SignUpName" Placeholder="이름" Text="{Binding SignUpName}"></Entry>
+            <Entry x:Name="SignUpNName" Placeholder="계정명" Text="{Binding SignUpNName}"></Entry>
+            <Button VerticalOptions="Center" Text="중복확인" Command="{Binding OverlapNName_CKCommand}"/>
+            <Entry x:Name="SignUpPNumber" Placeholder="전화번호" Text="{Binding SignUpPNumber}"></Entry>
+            <Entry x:Name="SignUpEmail" Placeholder="e_mail" Text="{Binding SignUpEmail}"></Entry>
+            <Entry x:Name="SignUpka_ID" Placeholder="카카오톡 ID" Text="{Binding SignUpka_ID}"></Entry>
+            <Button VerticalOptions="Center" Text="수정" Command="{Binding SignUp_Command}"/>
+            <Button VerticalOptions="Center" Text="취소" Command="{Binding Back}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

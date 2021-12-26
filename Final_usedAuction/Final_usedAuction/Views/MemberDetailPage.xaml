@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_usedAuction.Views.MemberDetailPage"
+             >
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="이용자별명:" FontSize="Medium"/>
+                <Label Text="{Binding Nname}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="이용자명:" FontSize="Medium"/>
+                <Label Text="{Binding Name}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="연락처:" FontSize="Medium"/>
+                <Label Text="{Binding Phone}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="이메일:" FontSize="Medium"/>
+                <Label Text="{Binding Email}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="카카오톡ID:" FontSize="Medium"/>
+                <Label Text="{Binding KaID}" FontSize="Medium"/>
+            </StackLayout>
+            <Label Text="거래만족도 中 신뢰도" FontSize="Medium"/>
+            <Slider Minimum="0" Maximum="100" Value="{Binding Trust}"/>
+            <Label Text="거래만족도 中 응답도" FontSize="Medium"/>
+            <Slider Minimum="0" Maximum="100" Value="{Binding Answer}"/>
+            <Label Text="거래만족도 中 만족도" FontSize="Medium"/>
+            <Slider Minimum="0" Maximum="100" Value="{Binding Satissfied}"/>
+            <Button Text="만족도 전송" Command="{Binding Sendtrust}"/>
+            <Button Text="뒤로" Command="{Binding Back}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

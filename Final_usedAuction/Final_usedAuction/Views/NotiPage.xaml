@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_usedAuction.Views.NotiPage"
+             xmlns:local="clr-namespace:Final_usedAuction.ViewModels"  
+             xmlns:model="clr-namespace:Final_usedAuction.Models"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <RefreshView x:DataType="local:NotiViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <ScrollView>
+                <CollectionView x:Name="NotiListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" x:DataType="model:Noti">
+                                <Label Text= "{Binding noti}" LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16"/>
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:NotiViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

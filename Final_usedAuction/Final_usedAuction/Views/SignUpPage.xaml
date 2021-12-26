@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:Final_usedAuction.ViewModels"
+             x:Class="Final_usedAuction.Views.SignUpPage"
+             xmlns:behaviour="clr-namespace:final_u_auction.Behaviors"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:final_u_auction.Controls"
+    xmlns:converter="clr-namespace:final_u_auction.Converters"
+    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:final_u_auction.Views" xmlns:converter1="clr-namespace:Final_usedAuction.Converters"
+             BackgroundColor="#4473c4"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
+                                                                  iOSPhoneLandscape=LoginBackground-Landscape.png,
+                                                                  iOSTabletLandscape=LoginBackground-Landscape.png}"
+    NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter1:BooleanToColorConverter x:Key="ColorConverter" />
+            <converter1:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converter1:NameValidationConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <vm:SignUpViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <gradient:SfGradientView Style="{StaticResource BlueGradientStyle}" />
+            <ScrollView HorizontalOptions="Center">
+                <ScrollView.VerticalOptions>
+                    <OnIdiom
+                        x:TypeArguments="LayoutOptions"
+                        Default="CenterAndExpand"
+                        Phone="FillAndExpand" />
+                </ScrollView.VerticalOptions>
+                <StackLayout Padding="10,0,10,0"  Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                                 PhoneLandscape='150,32',
+                                                                 TabletPortrait='200,50',
+                                                                 TabletLandscape='300,50',
+                                                                 Desktop='30'}"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="{OnPlatform Default='-1',
+                                              UWP='350'}">
+                    <!--  Label to display the title of this page  -->
+                    <Label
+                            FontSize="20"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Sign Up"
+                            TextColor="{DynamicResource Gray-White}" />
+
+                    <!--  Label to display the description of this page  -->
+                    <Label
+                            Margin="0,16,0,8"
+                            Style="{StaticResource DescriptionLabelStyle}"
+                            Text="Create an account to start doing more"
+                            TextColor="{DynamicResource Gray-White}" />
+
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="SignUpID" Placeholder="ID                                                               " Text="{Binding SignUpID}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}" ></Entry>
+                        <buttons:SfButton VerticalOptions="Center" Text="중복확인" Command="{Binding OverlapID_CKCommand}"
+                                  Style="{StaticResource TransparentButtonStyle}" TextColor="{DynamicResource PrimaryColor}"/>
+                    </StackLayout>
+                    <Entry x:Name="SignUpPW" Placeholder="PW" Text="{Binding SignUpPW}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}"></Entry>
+                    <Entry x:Name="SignUpName" Placeholder="이름" Text="{Binding SignUpName}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}"></Entry>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="SignUpNName" Placeholder="계정명                                                       " Text="{Binding SignUpNName}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}"></Entry>
+                        <buttons:SfButton VerticalOptions="Center" Text="중복확인" Command="{Binding OverlapNName_CKCommand}"
+                        Style="{StaticResource TransparentButtonStyle}" TextColor="{DynamicResource PrimaryColor}"/>
+                    </StackLayout>
+                    <Entry x:Name="SignUpPNumber" Placeholder="전화번호" Text="{Binding SignUpPNumber}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}"></Entry>
+                    <Entry x:Name="SignUpEmail" Placeholder="e_mail" Text="{Binding SignUpEmail}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}"></Entry>
+                    <Entry x:Name="SignUpka_ID" Placeholder="카카오톡 ID" Text="{Binding SignUpka_ID}" Style="{StaticResource BorderlessEntryStyle}"
+                      PlaceholderColor="{StaticResource EntryPlaceholderColor}" TextColor="{StaticResource Gray-White}"></Entry>
+                    <buttons:SfButton VerticalOptions="Center" Text="signup" Command="{Binding SignUp_Command}"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

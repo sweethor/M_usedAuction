@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_usedAuction.Views.MemberTrustCK">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="이용자명:" FontSize="Medium"/>
+                <Label Text="{Binding Name}" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="이용자별명:" FontSize="Medium"/>
+                <Label Text="{Binding Nname}" FontSize="Medium"/>
+            </StackLayout>
+            <Label Text="신뢰도" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <ProgressBar Progress="{Binding Trust}"/>
+                <Label Text="{Binding T_Trust}" FontSize="Medium"/>
+            </StackLayout>
+            <Label Text="응답도" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <ProgressBar Progress="{Binding Answer}"/>
+                <Label Text="{Binding T_Answer}" FontSize="Medium"/>
+            </StackLayout>
+            <Label Text="만족도" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <ProgressBar Progress="{Binding Satissfied}"/>
+                <Label Text="{Binding T_Satissfied}" FontSize="Medium"/>
+            </StackLayout>
+            <Button Text="뒤로" Command="{Binding Back}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

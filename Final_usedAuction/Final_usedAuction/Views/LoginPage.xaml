@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:Final_usedAuction.ViewModels"
+             x:Class="Final_usedAuction.Views.LoginPage"
+             xmlns:behaviour="clr-namespace:Final_usedAuction.Behaviors"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:control="clr-namespace:Final_usedAuction.Controls"
+             xmlns:converter="clr-namespace:Final_usedAuction.Converters"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:local="clr-namespace:Final_usedAuction.Views"
+             BackgroundColor="#4473c4"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
+                                                                  iOSPhoneLandscape=LoginBackground-Landscape.png,
+                                                                  iOSTabletLandscape=LoginBackground-Landscape.png}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converter:NameValidationConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <gradient:SfGradientView Style="{StaticResource BlueGradientStyle}" />
+            <ScrollView HorizontalOptions="Center">
+                <ScrollView.VerticalOptions>
+                    <OnIdiom
+                        x:TypeArguments="LayoutOptions"
+                        Default="CenterAndExpand"
+                        Phone="FillAndExpand" />
+                </ScrollView.VerticalOptions>
+                <StackLayout Padding="10,0,10,0" 
+              Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                                 PhoneLandscape='150,32',
+                                                                 TabletPortrait='200,50',
+                                                                 TabletLandscape='300,50',
+                                                                 Desktop='30'}"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="{OnPlatform Default='-1',
+                                              UWP='350'}"  >
+                    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+                        RowSpacing="0"
+                        VerticalOptions="CenterAndExpand">
+                        <!--  Label to display the title of this page  -->
+                        <Label
+                            FontSize="20"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="경매중고"
+                            TextColor="{DynamicResource Gray-White}" />
+
+                        <!--  Label to display the description of this page  -->
+                        <Label
+                            Grid.Row="1"
+                            Margin="0,8"
+                            Style="{StaticResource DescriptionLabelStyle}"
+                            Text="make the transaction more economical"
+                            TextColor="{DynamicResource Gray-White}" />
+                        <StackLayout Grid.Row="3">
+                            
+            <Image Source="login.png"
+                   WidthRequest="{OnPlatform Android=250}"
+                   HorizontalOptions="Center"/>
+                <Entry x:Name="LoginID" Placeholder="ID" Text="{Binding LoginID}" Margin="15,0"  HeightRequest="40"
+                       TextColor="{StaticResource Gray-White}" PlaceholderColor="{StaticResource EntryPlaceholderColor}"
+                       Style="{StaticResource BorderlessEntryStyle}"/>
+                <Entry x:Name="LoginPW" Placeholder="PW" Text="{Binding LoginPW}" IsPassword="True"
+                      Style="{StaticResource BorderlessEntryStyle}" TextColor="{StaticResource Gray-White}" 
+                       Margin="15,0" HeightRequest="40"/>
+                            <StackLayout HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        Spacing="1"
+                        VerticalOptions="End">
+                <buttons:SfButton VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"
+                         Style="{StaticResource TransparentButtonStyle}"  TextColor="{DynamicResource PrimaryColor}" />
+                <Label
+                            Style="{StaticResource DescriptionLabelStyle}"
+                            Text="Don't have an account?"
+                            TextColor="{DynamicResource Gray-White}"
+                            VerticalTextAlignment="Center" />
+                 <buttons:SfButton VerticalOptions="Center" Text="signup" Command="{Binding SignUpCommand}"
+                    Style="{StaticResource TransparentButtonStyle}" TextColor="{DynamicResource PrimaryColor}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

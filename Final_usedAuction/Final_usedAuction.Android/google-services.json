@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "886193163661",
+    "firebase_url": "https://fianl-pjt-default-rtdb.firebaseio.com",
+    "project_id": "fianl-pjt",
+    "storage_bucket": "fianl-pjt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886193163661:android:8ef2b4ecd461dc79d341c4",
+        "android_client_info": {
+          "package_name": "com.companyname.final_usedauction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886193163661-67e803bp97ea3c6dgeg7ciu7mtreqk2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANEueZsrVBe4Avq0-6ERzlMfgUxuM8E8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886193163661-67e803bp97ea3c6dgeg7ciu7mtreqk2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

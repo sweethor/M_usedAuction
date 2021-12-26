@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_usedAuction.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <ScrollView>
+    <StackLayout Spacing="20" Padding="15">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="제목:" FontSize="Medium"/>
+            <Label Text="{Binding S_name}" FontSize="Medium"/>
+        </StackLayout>
+        <AbsoluteLayout>
+            <Label Text="판매자:" FontSize="Medium" AbsoluteLayout.LayoutBounds="230,0,100,35"/>
+            <Label Text="{Binding S_id}" FontSize="Medium" AbsoluteLayout.LayoutBounds="300,0,100,35"/>
+            <Button Text="신뢰도 확인" Command="{Binding SellerInfo}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Isbuyer}" AbsoluteLayout.LayoutBounds="300,30,100,35"></Button>
+        </AbsoluteLayout>
+        <Image x:Name="resImage" Source="{Binding Imagesource}" HeightRequest="50" WidthRequest="50" />
+        <Label Text="{Binding S_con}" FontSize="Small"/>
+        <StackLayout Orientation="Horizontal" IsVisible="{Binding Isprice}">
+            <Label Text="가격:" FontSize="Medium"/>
+            <Label Text="{Binding S_price}" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" IsVisible="{Binding Isbid}">
+            <Label Text="최고입찰가:" FontSize="Medium"/>
+            <Label Text="{Binding H_bid}" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" IsVisible="{Binding Isbid}">
+            <Label Text="최고입찰자:" FontSize="Medium"/>
+            <Label Text="{Binding T_id}" FontSize="Medium"/>
+        </StackLayout>
+        <Entry Text="{Binding Bid}" FontSize="Medium" HeightRequest="40" IsVisible="{Binding Isbuyer}" Placeholder="구매 및 입찰 가격 입력"/>
+        <Button Text="구매 및 입찰" Command="{Binding Buy}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Isbuyer}"></Button>
+        <Button Text="즐겨찾기" Command="{Binding Bookmark}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Isbook}"></Button>
+        <Button Text="즐겨찾기취소" Command="{Binding CBookmark}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Iscbook}"></Button>
+        <Button Text="낙찰" Command="{Binding Sucbid}" HorizontalOptions="FillAndExpand"  IsVisible="{Binding Iseller}"></Button>
+        <Button Text="글 변경" Command="{Binding Updateitem}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Iseller}" ></Button>
+        <Button Text="글 삭제" Command="{Binding Deleteitem}" HorizontalOptions="FillAndExpand" IsVisible="{Binding Iseller}"></Button>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_usedAuction.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+
+        <ScrollView>
+        <StackLayout Spacing="3" Padding="15" HeightRequest="40">
+            <Label Text="제목" FontSize="Medium" />
+            <Entry Text="{Binding Name}" FontSize="Medium" HeightRequest="40" />
+            <Label Text="내용" FontSize="Medium" HeightRequest="40"/>
+            <Editor Text="{Binding Contents}" AutoSize="TextChanges" FontSize="Medium" Margin="0" HeightRequest="40"/>
+            <Label Text="가격" FontSize="Medium" HeightRequest="40" />
+            <Entry Text="{Binding Price}" FontSize="Medium" HeightRequest="40"/>
+            <Label Text="시작호가" FontSize="Medium" HeightRequest="40" />
+            <Entry Text="{Binding Bid}" FontSize="Medium" HeightRequest="40"/>
+            <AbsoluteLayout>
+                <Button   ScaleY="1" FontSize="Small"  Text="경매" Command="{Binding Mode1}"  AbsoluteLayout.LayoutBounds="0,0,100,35"  />
+                <Button   ScaleY="1" FontSize="Small"  Text="판매" Command="{Binding Mode2}" AbsoluteLayout.LayoutBounds="150,0,100,35" />
+                <Button   ScaleY="1" FontSize="Small"  Text="경매,판매" Command="{Binding Mode3}" AbsoluteLayout.LayoutBounds="300,0,100,35" />
+            </AbsoluteLayout>
+            <AbsoluteLayout>
+                <Button   ScaleY="1" FontSize="Small"  Text="IT" Command="{Binding Cate1}"  AbsoluteLayout.LayoutBounds="0,0,100,35" />
+                <Button   ScaleY="1" FontSize="Small"  Text="가전제품" Command="{Binding Cate2}" AbsoluteLayout.LayoutBounds="100,0,100,35" />
+                <Button   ScaleY="1" FontSize="Small"  Text="헬스" Command="{Binding Cate3}" AbsoluteLayout.LayoutBounds="200,0,100,35" />
+                <Button   ScaleY="1" FontSize="Small"  Text="잡화" Command="{Binding Cate4}" AbsoluteLayout.LayoutBounds="300,0,100,35" />
+            </AbsoluteLayout>
+            <Button Text="사진 가져오기" Command="{Binding PickImage}" HorizontalOptions="FillAndExpand" ></Button>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="resImage" Source="{Binding Imagesource}" HeightRequest="50" WidthRequest="50" />
+                <Button Text="취소" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="저장" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+    
+</ContentPage>
