@@ -15,8 +15,8 @@ App 기능
 - 평점 및 신뢰도
 
 추가사항
-- M-usedAuction 과 같은 DB사용 모바일에서도 확인가능
-- https://github.com/sweethor/M_usedAuction
+- usedAuction 과 같은 DB사용 윈도우 어플에서도 확인가능
+- https://github.com/sweethor/usedAuction
 
 실행화면
 
